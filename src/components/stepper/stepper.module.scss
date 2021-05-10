@@ -1,0 +1,66 @@
+@import "../../scss/variables.scss";
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .topInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+
+    h1 {
+      font-size: 30px;
+      line-height: 30px;
+      color: $primary-color;
+      margin-bottom: 0;
+    }
+
+    span {
+      font: 700 14px/14px $font-family;
+      color: $primary-color;
+      text-transform: uppercase;
+    }
+  }
+
+  .line {
+    display: flex;
+    width: 100%;
+
+    .lineFragment {
+      background: $border-color;
+      height: 2px;
+      width: 100%;
+      position: relative;
+
+      & .fragmentFill {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: $primary-color;
+        transition: .2s all ease-in-out;
+
+        &.filled {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .childrenContainer {
+    padding: 36px 0 30px;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+
+    button:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

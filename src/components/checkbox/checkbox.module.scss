@@ -1,0 +1,82 @@
+@import "../../scss/variables.scss";
+
+.checkboxContainer {
+    margin: 7px 0;
+    display: inline-flex;
+    user-select: none;
+  }
+
+  .checkbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  
+    &+span {
+      position: relative;
+      display: inline-flex;
+      cursor: pointer;
+      font-size: 16px;
+      align-items: center;
+  
+      &::before {
+        content: "";
+        transition: .1s all ease-in-out;
+        border: 2px solid $border-color;
+        border-radius: 50%;
+        display: inline-flex;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        margin-right: 20px;
+        color: white;
+      }
+
+      &::after {
+        left: 3px;
+        top: 6px;
+        font-size: 18px;
+        position: absolute;
+        content: "\e922";
+        font-family: alto-icons !important;
+        font-weight: 400;
+        transition: .1s all ease-in-out;
+        width: 20px;
+        height: 20px;
+        color: white;
+      };
+    };
+  
+    &:not(:disabled):checked+span::before {
+      // content: "\\e914";
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+
+    &:not(:checked):focus+span::before, &:not(:disabled):not(:checked)+span:hover::before {
+      border-color: transparentize($color: $primary-color, $amount: 0.2);
+    }
+
+    &:not(:checked):disabled+span::before {
+      border-color: $border-color;
+    }
+
+    &:checked:disabled+span::before {
+      background: $border-color;
+    };
+  };
+
+  label {
+    color: $text-color;
+    display: flex;
+    align-items: center;
+
+    .labelIcon {
+      margin-right: 22px;
+      font-size: 30px;
+    }
+    
+    .labelText {
+      font: 700 18px/20px $font-family;
+    }
+  };
+

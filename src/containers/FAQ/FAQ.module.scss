@@ -1,0 +1,143 @@
+@import "../../scss/variables.scss";
+
+
+.questionsContainer {
+  padding: 55px 20px 30px;
+  max-width: $max-inner-width;
+  width: 100%;
+  margin: 0 auto;
+
+  h1 {
+     font-size: 44px;
+     color: $primary-color
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 700;
+    color: $secondary-color;
+    margin-top: 44px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  
+    li {
+      padding: 12px 20px;
+      width: 100%;
+      font: 700 16px/16px $font-family;
+      border-bottom: 1px solid $border-color;
+      
+      a {
+        color: $text-color;
+        transition: $standard-transition;
+
+        &:hover {
+          color: $secondary-color; 
+        }
+      }
+    }
+  }
+}
+
+.answersContainer {
+  padding: 0 20px;
+  max-width: $max-inner-width;
+  margin: 0 auto 110px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  
+    li {
+      width: 100%;
+      border-bottom: 1px solid $border-color;
+      padding: 20px 0;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 36px;
+      }
+    }
+  }
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  padding: 90px 0;
+  position: relative;
+  
+  .innerWavesContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+
+    @include xl {
+      width: 220vw;
+      left: -20vw
+    }
+
+    @include xxl {
+      width: 220vw;
+      left: -30vw
+    }
+    
+    .innerWaves {
+      position: absolute;
+      top: 40px;
+      width: 140vw;
+      left: -40vw;
+      z-index: 0;
+      min-width: 800px;
+        
+      @include md {
+        left: 0
+      }
+
+      @include lg {
+        width: 130vw;
+        height: 50vw;
+        top: 80px;
+      }
+    }
+  }
+
+  .formContainer {
+    max-width: 550px;
+    padding: 0 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 44px;
+      color: $secondary-color;
+      margin-bottom: 44px;
+
+      @include lg {
+        font-size: 40px;
+      }
+    }
+
+    form {
+      & > *:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    button {
+      margin: 30px 0 0 auto
+    }
+  }
+}
