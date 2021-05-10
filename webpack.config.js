@@ -78,6 +78,7 @@ module.exports = {
     new HtmlWebpackPlugin({
 			template: 'public/index_template.html',
 			robots: (process.env.NODE_ENV !== "production") ? 'noindex' : 'all',
+      hostpath: "https://joker9090.github.io/alto-landing",
       title: "Defy Web",
       description: "Defy web page custom",
       keywords: "",
