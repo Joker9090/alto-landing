@@ -3,7 +3,6 @@ import { BrowserRouter, Redirect, Route, Router, Switch, useHistory } from 'reac
 import Header from '../components/header/header.jsx';
 import Main from './Main/Main.js';
 import Registration from './Registration/Registration.js';
-import '../scss/app.scss'
 import Footer from '../components/footer/footer.jsx';
 import LoginModal from './LoginModal/LoginModal.js';
 import FAQ from './FAQ/FAQ.js';
