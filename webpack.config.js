@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].js',
-    publicPath: '/',
+    publicPath: 'https://joker9090.github.io/alto-landing/',
 },
   node: {
     fs: 'empty'
