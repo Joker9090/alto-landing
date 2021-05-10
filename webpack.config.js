@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].js',
-    publicPath: 'https://joker9090.github.io/alto-landing/',
+    publicPath: 'https://joker9090.github.io/alto-landing/desc/',
 },
   node: {
     fs: 'empty'
@@ -78,7 +78,7 @@ module.exports = {
     new HtmlWebpackPlugin({
 			template: 'public/index_template.html',
 			robots: (process.env.NODE_ENV !== "production") ? 'noindex' : 'all',
-      hostpath: "https://joker9090.github.io/alto-landing",
+      hostpath: "https://joker9090.github.io/alto-landing/desc",
       title: "Defy Web",
       description: "Defy web page custom",
       keywords: "",

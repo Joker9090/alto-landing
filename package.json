@@ -2,7 +2,7 @@
   "name": "alto-landing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://joker9090.github.io/alto-landing",
+  "homepage": "https://joker9090.github.io/alto-landing/desc",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
