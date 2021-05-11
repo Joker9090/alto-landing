@@ -26,7 +26,7 @@ function App() {
             <Route path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="/faq" component={FAQ} />
             <Route exact path="/" component={Main} />
-            <Redirect to="/" />
+            <Redirect to="/a" />
           </Switch>
         </Router>
         </ScrollToTop>

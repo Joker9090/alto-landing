@@ -1,6 +1,6 @@
 import 'react-app-polyfill/ie11'; // For IE 11 support
 import './polyfill'
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
@@ -29,13 +29,13 @@ const App = React.lazy(() => import('./containers/App'));
 
 ReactDOM.render(
   <Provider store={store}>
-      <Router history={history} >
-        <React.Suspense fallback={loading}>
-          <Switch>
-            <Route exact="/" name="Home" render={props => <App {...props} />} />
-          </Switch>
-        </React.Suspense>
-      </Router>
+    <BrowserRouter history={history} >
+      <React.Suspense fallback={loading}>
+        <Switch>
+          <Route exact="/" name="Home" render={props => <App {...props} />} />
+        </Switch>
+      </React.Suspense>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

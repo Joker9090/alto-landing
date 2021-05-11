@@ -2,7 +2,7 @@
   "name": "alto-landing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://joker9090.github.io/alto-landing/",
+  "homepage": "https://joker9090.github.io/alto-landing",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
@@ -31,8 +31,8 @@
     "babel-loader": "8.0.6",
     "clean-webpack-plugin": "3.0.0",
     "cypress": "3.4.1",
-    "eslint-config-airbnb": "17.1.1",
     "eslint": "^6.6.0",
+    "eslint-config-airbnb": "17.1.1",
     "eslint-loader": "3.0.3",
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
@@ -40,6 +40,7 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "4.2.0",
+    "gh-pages": "^3.1.0",
     "ignore-loader": "0.1.2",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.13.1",
@@ -55,6 +56,8 @@
     "webpack-node-externals": "1.7.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start:webpack": "webpack-dev-server --mode development --open --config webpack.development.config.js --host localhost",
     "build:webpack": "webpack --env.NODE_ENV=production --mode production",
     "build": "npx react-scripts build",
