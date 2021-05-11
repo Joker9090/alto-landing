@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/alto-landing/precache-manifest.307e17ac539d0cc396cf4366cb01b577.js"
+  "/alto-landing/precache-manifest.98ece74b17eec05dc13f4e40d0ed5619.js"
 );
 
 self.addEventListener('message', (event) => {
