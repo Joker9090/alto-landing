@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "16296aebdc4a3cd0754024715723fd53",
+    "revision": "b189ce3589290809fced8e20969ba067",
     "url": "/alto-landing/index.html"
   },
   {
-    "revision": "1bfd73d62456a09abd6e",
-    "url": "/alto-landing/static/css/3.ec7d2d3f.chunk.css"
+    "revision": "0aa55e5846d82faa2afe",
+    "url": "/alto-landing/static/css/3.409179d8.chunk.css"
   },
   {
     "revision": "910fe1b0e8a990842df1",
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/alto-landing/static/js/2.3cbc8217.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1bfd73d62456a09abd6e",
-    "url": "/alto-landing/static/js/3.ab7cc6b6.chunk.js"
+    "revision": "0aa55e5846d82faa2afe",
+    "url": "/alto-landing/static/js/3.e8c7b92d.chunk.js"
   },
   {
     "revision": "910fe1b0e8a990842df1",
@@ -40,7 +40,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/alto-landing/static/js/main.38ad031c.chunk.js"
   },
   {
-    "revision": "c9f952497c4cedbc07dc",
-    "url": "/alto-landing/static/js/runtime-main.d5d58021.js"
+    "revision": "72c2cef2859ad132180b",
+    "url": "/alto-landing/static/js/runtime-main.2fd61d87.js"
+  },
+  {
+    "revision": "ccf4b4fc0db077a04e7f0440f1c5cb4c",
+    "url": "/alto-landing/static/media/waves-small-2x.ccf4b4fc.png"
   }
 ]);
