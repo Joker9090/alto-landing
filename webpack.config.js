@@ -1,19 +1,11 @@
-var path = require('path');
+const path = require('path');
 const webpack = require("webpack");
-const nodeExternals = require("webpack-node-externals");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const WebpackMd5Hash = require("webpack-md5-hash");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { env } = require('process');
 
 module.exports = {
-  output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: '[name].js',
-    publicPath: 'https://joker9090.github.io/alto-landing/desc/',
-},
+  mode: 'development',
   node: {
     fs: 'empty'
   },
@@ -31,57 +23,48 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-            },
-          },
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+          "postcss-loader",
+          "sass-loader", // compiles Sass to CSS, using Node Sass by default
+        ]
       },
       {
         test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '/public/',
-            },
-          },
-          'css-loader',
-        ]
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+        ],
+        exclude: /popups.css/
       },
       {
         test: /\.(png|jpg|jpeg)$/,
         loader: 'url-loader'
       },
-      { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+      { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
+      {
+        test: /\.(tsx|ts)?$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true
+        }
+      }
     ]
   },
+  output: {
+    publicPath: '/',
+  },
   plugins: [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: 'main.css',
+    new webpack.LoaderOptionsPlugin({
+      options: { postcss: [autoprefixer()] }
     }),
-
     new webpack.DefinePlugin({
       'process.env': {
         // With dotenv (values must be stringified)
         ...Object.entries(require('dotenv').config().parsed).reduce((acc, curr) => ({ ...acc, [`${curr[0]}`]: JSON.stringify(curr[1]) }), {})
       }
     }),
-    new HtmlWebpackPlugin({
-			template: 'public/index_template.html',
-			robots: (process.env.NODE_ENV !== "production") ? 'noindex' : 'all',
-      hostpath: "https://joker9090.github.io/alto-landing/desc",
-      title: "Defy Web",
-      description: "Defy web page custom",
-      keywords: "",
-      googleID: ""
-		})
+    
   ]
 };

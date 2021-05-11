@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducers from './reducers'
 import thunk from 'redux-thunk';
-import "./scss/index.scss";
+import "./scss/main.scss";
 
 console.log('*** process.env *** ', process.env)
 
